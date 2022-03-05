@@ -7,7 +7,28 @@ public class IdleAnimSelection : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetInteger("IdleSelect", Random.Range(1, 4));
+        bool isTrigger = false;
+
+        if (Input.GetKey(KeyCode.Q))
+        {
+            isTrigger = true;
+        }
+
+        else if (Input.GetKey(KeyCode.W))
+        {
+            isTrigger = true;
+        }
+
+        else if (Input.GetKey(KeyCode.E))
+        {
+            isTrigger = true;
+        }
+
+        if (isTrigger)
+            animator.SetInteger("IdleSelect", 0);
+        else
+            animator.SetInteger("IdleSelect", Random.Range(1, 4));
+        
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

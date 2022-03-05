@@ -17,34 +17,35 @@ public class DanceParty : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        //anim.SetInteger("IdleSelect", 0);
+
+        if (Input.GetKey(KeyCode.Q))
         {
             anim.SetTrigger("Dance_01");
         }
-
-        if (Input.GetKeyDown(KeyCode.W))
+        else if (Input.GetKey(KeyCode.W))
         {
             anim.SetTrigger("Dance_02");
         }
-
-        if (Input.GetKeyDown(KeyCode.E))
+        else if (Input.GetKey(KeyCode.E))
         {
             anim.SetTrigger("Dance_03");
         }
-
-        if (Input.GetKeyDown(KeyCode.R))
+        else if (Input.GetKeyDown(KeyCode.R))
         {
             anim.SetTrigger("Dance_04");
         }
-
-        if (Input.GetKeyDown(KeyCode.T))
+        else if (Input.GetKeyDown(KeyCode.T))
         {
             anim.SetTrigger("Dance_05");
         }
-
-        if (Input.GetKeyDown(KeyCode.Y))
+        else if(Input.GetKeyDown(KeyCode.Y))
         {
             anim.SetTrigger("Dance_06");
+        }
+        else
+        {
+            //anim.SetInteger("IdleSelect", Random.Range(1, 4));
         }
     }
 }
